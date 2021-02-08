@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:notez/model/user.dart';
 import 'package:notez/pages/components/player.dart';
 
 class BirthdayGreetingsPage extends StatelessWidget {
-  final String age;
+  final User user;
 
-  BirthdayGreetingsPage({Key key, @required this.age}) : super(key: key);
+  BirthdayGreetingsPage({Key key, @required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,15 @@ class BirthdayGreetingsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "!!!You are $age today!!!",
+              "Happy birthday, ${user.name}!",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.blue[900],
+                fontSize: 24,
+              ),
+            ),
+            Text(
+              "!!!You are ${user.age} today!!!",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.red[700],
